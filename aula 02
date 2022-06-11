@@ -125,3 +125,157 @@ if usuario.upper() == "INFINITY" and senha == 'school':
 else:
     print("ACESSO NEGADO")
     
+    
+    
+    
+    
+    
+    
+    
+    
+salario = float(input('informe o seu salário:'))
+
+if salario <= 1000:
+    salario = salario*1.15
+elif salario > 1000 and salario <= 3000:
+    salario = salario*1.1
+else:
+    salario = salario*1.05
+
+print(f'Seu salario reajustado é de R${salario:.2f}')
+
+
+
+
+soma = 0
+for i in range(0,10):
+    idade = int(input('informe umaa idade:'))
+    soma = soma + idade
+
+media = soma/10
+
+if media < 18:
+    print("População Jovem")
+elif media >= 18 and idade < 58:
+    print("População adulta")
+else:
+    print("população idosa")
+    
+    
+    
+    
+def calculaMedia(num1,num2):
+    media = (num1+num2)/2
+    print(f'A media do números informados vale {media}')
+
+calculaMedia(4,6)
+
+
+
+def verificaPositivo(num1):
+    if num1 > 0:
+        print("este numero é positivo")
+    elif num1 < 0:
+        print("este numero é negativo")
+    else:
+        print("este numero é nulo")
+
+numero = int(input("digite um número: "))
+verificaPositivo(numero)
+
+
+def contaVogais(nome):
+    contV = 0
+    for letra in nome:
+        if letra.lower() in 'aeiou':
+            contV += 1
+    print(contV)
+nome = input('Informe seu nome:')
+contaVogais(nome)
+
+
+
+def numeroPar (num1, num2):
+    contador = 0
+    if num1 % 2 == 0:
+        contador = contador+1
+    if num2 % 2 == 0:
+        contador = contador+1
+    return contador
+
+numero1 = int(input("informe um número"))
+numero2 = int(input("informe outro número"))
+
+contador = numeroPar(numero1,numero2)
+print(contador)
+
+
+
+def numeroAleatorio(num1,num2):
+    salario = num1*(1+(num2/100))
+    return salario
+
+numero1 = float(input('informe o seu salário:'))
+numero2 = float(input('Informe o percentual:'))
+
+salario = numeroAleatorio(numero1,numero2)
+print(salario)
+
+
+
+def verificaPar():
+    par1 = int(input('Informe um número par: '))
+    par2 = int(input('Informe outro número par: '))
+    if par1 >= par2:
+        return par1
+    else:
+        return par2
+
+def verificaImpar():
+    impar1 = int(input('Informe um número impar: '))
+    impar2 = int(input('Informe outro número impar: '))
+    if impar1 >= impar2:
+        return impar1
+    else:
+        return impar2
+
+par = verificaPar()
+impar = verificaImpar()
+
+print(f'A soma dos maiores números é igual a {par+impar}')
+
+
+
+
+
+def mensagem(nome, msg = 'Saudações, '):
+    print(f'{msg}{nome}')
+
+nome = input('Qual seu nome?')
+mensagem(nome)
+
+
+
+def mensagem(nome, msg = 'Boa aula, '):
+    if nome =="":
+        print(f' Boa aula, fulaninho de tal')
+    else:
+        print(f'{msg}{nome}')
+
+
+nome = input('Qual seu nome?')
+mensagem(nome)
+
+
+def numeroPositivo(num1):
+    soma = 0
+    for num1 in range(0,num1 + 1):
+        soma = soma + num1
+    print(soma)
+
+numero = int(input("digite um número: "))
+numeroPositivo(numero)
+
+
+
+http://dontpad.com/infinity-619-aula05
