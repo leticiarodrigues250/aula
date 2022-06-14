@@ -341,4 +341,40 @@ while 94 >= num:
     
 finalizamos na atividadde 6
 
+
+
+for i in range(51):
+  print (i)  
+  
+for i in range(100, -1, -1):
+  print (i)
+  
+  
+soma = 0
+media = 0
+
+for i in range (5):
+    num = int(input("Digite um número"))
+    soma += num
+print (f'Sua média é {soma/5}') 
+
+somaPar= 0
+somaImpar = 0
+
+for i in range (10):
+    num = int(input("Digite um número inteiro "))
+    if num % 2 == 0:
+        somaPar += num
+    else:
+        somaImpar += num
+print (f'A soma dos números pares {somaPar} e dos números ímpares {somaImpar}')
+
+nome = input("Digite seu nome completo")
+contador = 0
+for letra in nome:
+    if letra in "aeiou":
+        contador += 1
+print(f'São {contador} vogais')
+  
+
 http://dontpad.com/infinity-619-aula05
