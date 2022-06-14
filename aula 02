@@ -272,10 +272,73 @@ def numeroPositivo(num1):
     for num1 in range(0,num1 + 1):
         soma = soma + num1
     print(soma)
+    
+    
+    
+    Reposição
+
+nome = input("Informe seu nome")
+sobrenome = input("Informe seu sobrenome")
+print(f' Nome completo:{nome} {sobrenome} ')
 
 numero = int(input("digite um número: "))
 numeroPositivo(numero)
 
 
+num1 = int(input("Digite um número inteiro:"))
+num2 = int(input("Digite outro número inteiro:"))
+operacao = input("Digite a operação (+ - * /):")
+
+if operacao == '+':
+    print(num1 + num2)
+elif operacao == '-':
+    print(num1 - num2)
+elif operacao == '*':
+    print(num1 * num2)
+elif operacao == '/':
+    print(num1 / num2)
+    
+    
+usuario = input("Digite seu usuário:")
+senha = input("Digite sua senha:")
+
+if usuario == "admin":
+    if senha == "6019":
+        print("acesso liberado")
+else:
+    print("acesso negado")
+
+par = num % 2 == 0
+impar =num % 2 == 1
+
+num = int(input("Digite um número:"))
+if num % 2 == 0:
+    print("Este número é par!")
+else:
+    print("Este número é ímpar")
+    
+    
+num = 0
+while num <= 50:
+    print(num)
+    num += 1
+    
+num = 100
+while 0 <= num:
+    print(num)
+    num -= 1
+    
+num = 50
+while 10 <= num:
+    print(num)
+    num -= 1
+    
+num = 70
+while 94 >= num:
+    print(num)
+    num += 1
+    
+    
+finalizamos na atividadde 6
 
 http://dontpad.com/infinity-619-aula05
