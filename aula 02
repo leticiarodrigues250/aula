@@ -378,3 +378,304 @@ print(f'São {contador} vogais')
   
 
 http://dontpad.com/infinity-619-aula05
+
+
+lista_nome = []
+lista_cpf = []
+
+for i in range(0 , 5):
+    controle = 's'
+    nome = input('Nome: ')
+    cpf = input('CPF: ')
+
+    if cpf in lista_cpf:
+        print('CPF já existente')
+    else:
+        lista_nome.append(nome)
+        lista_cpf.append(cpf)
+
+print(lista_cpf)
+print(lista_nome)
+
+
+dicionario_nome = {}
+
+for i in range(0 , 5):
+    nome = input('Nome: ')
+    cpf = input('CPF: ')
+
+    if cpf in dicionario_nome.values():
+        print('CPF já existente')
+    else:
+        dicionario_nome[nome] = cpf
+        print(dicionario_nome)
+        
+        
+ class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+        
+ 
+ class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = int(input('Conta: '))
+saldo = int(input('Saldo: '))
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+
+print(var.agencia)
+print(var.favorecido)
+print(var.conta)
+print(var.saldo)
+
+
+
+class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+    
+    def deposito(self, valor):
+        if valor > 0:
+            self.saldo = valor + self.saldo
+        else:
+            print("valor inválido")
+
+
+
+
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = int(input('Conta: '))
+saldo = int(input('Saldo: '))
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+
+print(var.agencia)
+print(var.favorecido)
+print(var.conta)
+print(var.saldo)
+
+
+
+class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+
+    def deposito(self, valor):
+        if valor > 0:
+            self.saldo = valor + self.saldo
+        else:
+            print('valor inválido')
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = input('Conta: ')
+saldo =float(input('Saldo: '))
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+for i in range (0, 3):
+    dep = float(input('Deposito: '))
+    var.deposito(dep)
+
+print(var.agencia)
+print(var.favorecido)
+print(var.conta)
+print(var.saldo)
+
+
+
+
+class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+
+    def deposito(self, valor):
+        if valor > 0:
+            self.saldo = valor + self.saldo
+        else:
+            print('valor inválido')
+
+    def saque(self, valor01):
+        if valor01 < self.saldo:
+            self.saldo = self.saldo - valor01
+        else:
+            print("POBRE!")
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = input('Conta: ')
+saldo =float(input('Saldo: '))
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+for i in range (0, 3):
+    dep = float(input('Deposito: '))
+    var.deposito(dep)
+
+saque = float(input("Saque: "))
+var.saque(saque)
+
+print(var.agencia)
+print(var.favorecido)
+print(var.conta)
+print(var.saldo)
+
+
+class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+
+    def deposito(self, valor):
+        if valor > 0:
+            self.saldo = valor + self.saldo
+        else:
+            print('valor inválido')
+
+    def saque(self, valor01):
+        if valor01 < self.saldo:
+            self.saldo = self.saldo - valor01
+        else:
+            print("POBRE!")
+    def total(self):
+        print(self.agencia)
+        print(self.conta)
+        print(self.saldo)
+        print(self.favorecido)
+
+
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = input('Conta: ')
+saldo =float(input('Saldo: '))
+
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+for i in range (0, 3):
+    dep = float(input('Deposito: '))
+    var.deposito(dep)
+
+saque = float(input("Saque: "))
+var.saque(saque)
+
+var01 = ContaCorrente(1234, 123, 80, 'Le')
+for i in range (0, 3):
+    dep01 = float(input('Deposito: '))
+    var01.deposito(dep01)
+
+saque = float(input("Saque: "))
+var01.saque(saque)
+
+var.total()
+var01.total()
+
+
+
+class ContaCorrente:
+    def __init__(self, agencia, conta, saldo, favorecido):
+        self.agencia = agencia
+        self.favorecido = favorecido
+        self.conta = conta
+        self. saldo = saldo
+
+    def deposito(self, valor):
+        if valor > 0:
+            self.saldo = valor + self.saldo
+        else:
+            print('valor inválido')
+
+    def saque(self, valor01):
+        if valor01 < self.saldo:
+            self.saldo = self.saldo - valor01
+        else:
+            print("POBRE!")
+    def transferir(self, valor, conta):
+        if valor <= self.saldo:
+            self.saldo -= valor
+        else:
+            print('POBRE')
+    def total(self):
+        print(self.agencia)
+        print(self.conta)
+        print(self.saldo)
+        print(self.favorecido)
+
+agencia = int(input('Agencia: '))
+favorecido = input('Favorecido: ')
+conta = input('Conta: ')
+saldo =float(input('Saldo: '))
+
+var = ContaCorrente(agencia, conta, saldo, favorecido)
+for i in range (0, 3):
+    dep = float(input('Deposito: '))
+    var.deposito(dep)
+
+saque = float(input("Saque: "))
+var.saque(saque)
+
+var01 = ContaCorrente(1234, 123, 80, 'Le')
+for i in range (0, 3):
+    dep01 = float(input('Deposito: '))
+    var01.deposito(dep01)
+
+saque = float(input("Saque: "))
+var01.saque(saque)
+
+var.transferir(50, var01)
+
+var.total()
+var01.total()
+
+
+]
+
+class Pessoa:
+    def __init__(self, nome, idade, altura, peso):
+        self.nome = nome
+        self.idade = idade
+        self.altura = altura
+        self.peso = peso
+
+    def engordar(self, kg):
+        self.peso = self.peso + kg
+    def emagrecer(self, kg):
+        self.peso = self.peso - kg
+    def crescer(self, cm):
+        self.altura = self.altura + cm
+    def envelhecer(self):
+        if self.idade < 21:
+            self.altura = self.altura + 0.5
+        self.idade = self.idade + 1
+
+pessoa = Pessoa("Leticia", 18, 170, 55 )
+
+pessoa.envelhecer()
+pessoa.envelhecer()
+pessoa.envelhecer()
+pessoa.envelhecer()
+pessoa.envelhecer()
+print(pessoa.idade)
+print(pessoa.altura)
