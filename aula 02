@@ -958,3 +958,247 @@ produto = Produto(nome, categoria, preco)
 desc = float(input('Qual valor você quer pagar pelo produto? '))
 produto.preco = desc
 produto.mostrarCompra()
+
+
+
+08/07
+http://dontpad.com/619aula09
+
+
+Crie uma classe chamada Paciente que terá como atributos encapsulados o nome, idade e cpf. A idade somente poderá ser alterada com um método para envelhecer que, por padrão, acrescentará um ano à idade da pessoa.
+
+class Paciente:
+    def __init__(self, nome, idade, cpf):
+        self.__nome = nome
+        self.__idade = idade
+        self.__cpf = cpf
+
+    def envelhecer(self):
+        self.__idade += 1
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def idade(self):
+        return self.__idade
+
+    @property
+    def cpf(self):
+        return self.__cpf
+
+nome = input('Nome: ')
+idade = int(input('Idade: '))
+cpf = input('CPF: ')
+
+paciente = Paciente(nome, idade, cpf)
+
+paciente.envelhecer()
+paciente.envelhecer()
+
+print(paciente.nome)
+print(paciente.idade)
+print(paciente.cpf)
+
+
+Crie uma classe chamada Médico que terá como atributos nome, crm e especialidades, que será uma lista. Faça o encapsulamento dos atributos levando em consideração que o nome e crm não poderão ser alterados e o médico apenas pode acrescentar uma especialidade se tiver feito uma residência na área. Por fim, apresente as informações do médico na tela.
+
+
+class Medico:
+    def __init__(self, nome, crm):
+        self.__nome = nome
+        self.__crm = crm
+        self.__especialidades = []
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def crm(self):
+        return self.__crm
+
+    @property
+    def especialidades(self):
+        return self.__especialidades
+
+    @especialidades.setter
+    def especialidades(self, nEsp):
+        validacao = input(f'O médico fez residência na área de {nEsp}? (s/n)')
+        if validacao.lower() == 's':
+            self.__especialidades.append(nEsp)
+
+nome = input('Nome: ')
+crm = input('CRM: ')
+
+medico = Medico(nome, crm)
+
+print(medico.especialidades)
+
+medico.especialidades = 'Geriatria'
+
+
+
+
+Crie uma classe chamada Endereço que terá rua, bairro e cidade em seu construtor.
+Em seguida, crie uma classe Pessoa que terá nome, telefone e endereço, que irá iniciar vazio.
+Crie dois métodos na classe pessoa, um para informar um endereço e outra para apresentar as informações na tela.
+
+
+
+class Endereco:
+    def __init__(self, rua, bairro, cidade):
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+
+class Pessoa:
+    def __init__(self, nome, telefone):
+        self.nome = nome
+        self.telefone = telefone
+        self.endereco = ''
+
+    def infEndereco(self):
+        rua = input('Rua: ')
+        bairro = input('Bairro: ')
+        cidade = input('Cidade: ')
+        self.endereco = Endereco(rua, bairro, cidade)
+
+    def informacoes(self):
+        print(f'Nome: {self.nome}')
+        print(f'Telefone: {self.telefone}')
+        print(f'Rua: {self.endereco.rua}')
+        print(f'Bairro: {self.endereco.bairro}')
+        print(f'Cidade: {self.endereco.cidade}')
+
+nome = input('Nome: ')
+telefone = input('Telefone: ')
+pessoa = Pessoa(nome, telefone)
+pessoa.infEndereco()
+pessoa.informacoes()
+
+
+Utilizando a mesma ideia da questão anterior, agora crie uma classe Empresa que terá como atributos a razão social, o CNPJ e uma LISTA de endereços que irá iniciar vazia. Na classe Empresa, você deverá criar um método que irá adicionar um endereço na lista e um que exiba na tela todos os endereços.
+
+class Endereco:
+    def __init__(self, rua, bairro, cidade):
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+
+class Empresa:
+    def __init__(self, razao, cnpj):
+        self.razao = razao
+        self.cnpj = cnpj
+        self.enderecos = []
+
+    def adcEndereco(self):
+        rua = input('Rua: ')
+        bairro = input('Bairro: ')
+        cidade = input('Cidade: ')
+        endereco = Endereco(rua, bairro, cidade)
+        self.enderecos.append(endereco)
+
+    def apresentarEnd(self):
+        print(f'Empresa: {self.razao}')
+        print(f'CNPJ: {self.cnpj}')
+        print('-------------------------')
+
+        for i in range(0, len(self.enderecos)):
+            print(f'Rua: {self.enderecos[i].rua}')
+            print(f'Bairro: {self.enderecos[i].bairro}')
+            print(f'Cidade: {self.enderecos[i].cidade}')
+            print('---------------------------------')
+
+razao = input('Razão Social: ')
+cnpj = input('CNPJ: ')
+empresa1 = Empresa(razao, cnpj)
+empresa1.adcEndereco()
+empresa1.adcEndereco()
+empresa1.apresentarEnd()
+
+
+1 - Crie uma classe chamada produto que conterá como atributos o código, nome e valor.
+
+2 – Crie uma classe chamada carrinho de compra que terá como único atributo uma lista de produtos que deve se iniciar vazia.
+
+3 - Crie um método para inserir produtos que receberá um objeto por parâmetro que será incluído na lista. 
+
+4 – Crie um método para listar todos os produtos.
+
+5 – Finalize criando um método para exibir o valor final.
+'''
+class Produto:
+    def __init__(self, codigo, nome, valor):
+        self.codigo = codigo
+        self.nome = nome
+        self.valor = valor
+
+class Carrinho:
+    def __init__(self):
+        self.produtos = []
+
+    def inserirProduto(self, produto):
+        self.produtos.append(produto)
+
+    def listarProdutos(self):
+        for i in range(0, len(self.produtos)):
+            print(f'Cod: {self.produtos[i].codigo}')
+            print(f'Produto: {self.produtos[i].nome}')
+            print(f'Preço: R${self.produtos[i].valor}')
+            print('----------------------------------')
+#[{cod: 1, nome: escova, valor: 7.99}, {cod: 2, nome: toalha, valor: 29.99}]
+    def total(self):
+        soma = 0
+        for i in range(0, len(self.produtos)):
+            soma += self.produtos[i].valor
+        print(f'O valor total da compra foi de R${soma:.2f}')
+
+produto1 = Produto(1, 'Escova', 7.99)
+produto2 = Produto(2, 'Toalha', 29.99)
+produto3 = Produto(3, 'Café', 6.59)
+
+carrinho = Carrinho()
+carrinho.inserirProduto(produto1)
+carrinho.inserirProduto(produto2)
+carrinho.inserirProduto(produto3)
+carrinho.listarProdutos()
+carrinho.total()
+
+
+'''Crie uma classe Pessoa que terá nome, cpf e endereço como atributos.
+Em seguida, crie uma classe Endereço que terá rua, número, bairro e cidade como atributos.
+Por fim, crie uma classe Conta Bancária que terá como atributos, agencia, conta, saldo, favorecido e limite como atributos e os métodos sacar, depositar, transferir e imprimir informações.
+Você deve seguir algumas regras:
+
+Você deve usar associação por agregação onde o objeto pessoa deverá receber um objeto endereço e o objeto conta deverá receber uma pessoa como favorecido.
+Não esqueça de fazer as validações para saque, depósito e transferência respeitando inclusive os limites estabelecidos.
+Agência deve ser inicializada com um valor padrão, assim como o saldo, que deve começar zerado.
+'''
+class Pessoa:
+    def __init__(self, nome, cpf, endereco):
+        self.nome = nome
+        self.cpf = cpf
+        self.endereco = endereco
+        
+class Endereco:
+    def __init__(self, rua, numero, bairro, cidade):
+        self.rua = rua
+        self.numero = numero
+        self.bairro = bairro
+        self.cidade = cidade
+        
+class Conta:
+    def __init__(self, conta, favorecido, limite):
+        self.agencia = 1338
+        self.conta = conta
+        self.favorecido = favorecido
+        self.saldo = 0.0
+        self.limite = limite\
+        
+        
+        
+        
+        
+
